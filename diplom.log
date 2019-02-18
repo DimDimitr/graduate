@@ -1,0 +1,1651 @@
+2019-02-18 17:19:35,395 INFO - init connection
+2019-02-18 17:19:35,407 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:19:35,414 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:19:35,414 INFO - closeConnect
+2019-02-18 17:19:35,414 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:19:35,417 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:19:35,417 INFO - closeConnect
+2019-02-18 17:19:35,417 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:19:35,418 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:19:35,419 INFO - closeConnect
+2019-02-18 17:19:51,396 INFO - init connection
+2019-02-18 17:19:51,397 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:19:51,398 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:19:51,398 INFO - closeConnect
+2019-02-18 17:19:51,399 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:19:51,400 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:19:51,400 INFO - closeConnect
+2019-02-18 17:19:51,400 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:19:51,401 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:19:51,402 INFO - closeConnect
+2019-02-18 17:19:51,402 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:19:51,404 INFO - closeConnect
+2019-02-18 17:21:22,361 INFO - init connection
+2019-02-18 17:21:22,364 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:21:22,364 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:21:22,364 INFO - closeConnect
+2019-02-18 17:21:22,365 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:21:22,366 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:21:22,367 INFO - closeConnect
+2019-02-18 17:21:22,367 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:21:22,368 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:21:22,368 INFO - closeConnect
+2019-02-18 17:21:22,369 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:21:22,372 INFO - closeConnect
+2019-02-18 17:21:54,259 INFO - init connection
+2019-02-18 17:21:54,262 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:21:54,263 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:21:54,263 INFO - closeConnect
+2019-02-18 17:21:54,264 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:21:54,264 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:21:54,264 INFO - closeConnect
+2019-02-18 17:21:54,265 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:21:54,265 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:21:54,265 INFO - closeConnect
+2019-02-18 17:21:54,266 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:21:54,267 INFO - closeConnect
+2019-02-18 17:23:25,812 INFO - init connection
+2019-02-18 17:23:25,814 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:23:25,816 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:23:25,816 INFO - closeConnect
+2019-02-18 17:23:25,816 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:23:25,819 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:23:25,820 INFO - closeConnect
+2019-02-18 17:23:25,821 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:23:25,822 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:23:25,822 INFO - closeConnect
+2019-02-18 17:23:25,822 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:23:25,823 INFO - closeConnect
+2019-02-18 17:24:12,563 INFO - init connection
+2019-02-18 17:24:12,566 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:24:12,567 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:24:12,567 INFO - closeConnect
+2019-02-18 17:24:12,567 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:24:12,568 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:24:12,568 INFO - closeConnect
+2019-02-18 17:24:12,568 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:24:12,569 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:24:12,569 INFO - closeConnect
+2019-02-18 17:24:12,569 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:24:12,570 INFO - closeConnect
+2019-02-18 17:24:12,570 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:24:12,570 INFO - closeConnect
+2019-02-18 17:31:21,856 INFO - init connection
+2019-02-18 17:31:21,863 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:31:21,866 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:31:21,866 INFO - closeConnect
+2019-02-18 17:31:21,867 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:31:21,868 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:31:21,868 INFO - closeConnect
+2019-02-18 17:31:21,868 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:31:21,869 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:31:21,869 INFO - closeConnect
+2019-02-18 17:31:21,869 INFO - select * from operation_types None
+2019-02-18 17:31:21,870 INFO - closeConnect
+2019-02-18 17:31:21,871 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:31:21,872 INFO - closeConnect
+2019-02-18 17:31:21,874 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:31:21,875 INFO - closeConnect
+2019-02-18 17:31:21,875 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:31:21,877 INFO - closeConnect
+2019-02-18 17:31:21,879 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:31:48,272 INFO - init connection
+2019-02-18 17:31:48,273 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:31:48,274 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:31:48,274 INFO - closeConnect
+2019-02-18 17:31:48,275 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:31:48,276 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:31:48,276 INFO - closeConnect
+2019-02-18 17:31:48,276 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:31:48,277 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:31:48,277 INFO - closeConnect
+2019-02-18 17:31:48,277 INFO - select * from operation_types None
+2019-02-18 17:31:48,278 INFO - closeConnect
+2019-02-18 17:31:48,279 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:31:48,280 INFO - closeConnect
+2019-02-18 17:31:48,282 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:31:48,284 INFO - closeConnect
+2019-02-18 17:31:48,284 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:31:48,286 INFO - closeConnect
+2019-02-18 17:31:48,287 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:34:50,929 INFO - init connection
+2019-02-18 17:34:50,931 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:34:50,933 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:34:50,933 INFO - closeConnect
+2019-02-18 17:34:50,933 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:34:50,933 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:34:50,933 INFO - closeConnect
+2019-02-18 17:34:50,933 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:34:50,934 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:34:50,934 INFO - closeConnect
+2019-02-18 17:34:50,934 INFO - select * from operation_types None
+2019-02-18 17:34:50,935 INFO - closeConnect
+2019-02-18 17:34:50,935 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:34:50,936 INFO - closeConnect
+2019-02-18 17:35:29,726 INFO - init connection
+2019-02-18 17:35:29,729 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:35:29,730 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:35:29,730 INFO - closeConnect
+2019-02-18 17:35:29,730 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:35:29,731 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:35:29,731 INFO - closeConnect
+2019-02-18 17:35:29,731 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:35:29,732 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:35:29,732 INFO - closeConnect
+2019-02-18 17:35:29,733 INFO - select * from operation_types None
+2019-02-18 17:35:29,734 INFO - closeConnect
+2019-02-18 17:35:29,734 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:35:29,735 INFO - closeConnect
+2019-02-18 17:36:28,029 INFO - init connection
+2019-02-18 17:36:28,031 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:36:28,032 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:36:28,032 INFO - closeConnect
+2019-02-18 17:36:28,033 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:36:28,033 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:36:28,033 INFO - closeConnect
+2019-02-18 17:36:28,034 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:36:28,034 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:36:28,034 INFO - closeConnect
+2019-02-18 17:36:28,035 INFO - select * from operation_types None
+2019-02-18 17:36:28,035 INFO - closeConnect
+2019-02-18 17:36:28,036 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:36:28,038 INFO - closeConnect
+2019-02-18 17:36:33,194 INFO - init connection
+2019-02-18 17:36:33,196 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:36:33,197 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:36:33,198 INFO - closeConnect
+2019-02-18 17:36:33,198 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:36:33,199 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:36:33,199 INFO - closeConnect
+2019-02-18 17:36:33,200 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:36:33,201 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:36:33,201 INFO - closeConnect
+2019-02-18 17:36:33,201 INFO - select * from operation_types None
+2019-02-18 17:36:33,202 INFO - closeConnect
+2019-02-18 17:36:33,202 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:36:33,203 INFO - closeConnect
+2019-02-18 17:36:49,861 INFO - init connection
+2019-02-18 17:36:49,862 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:36:49,864 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:36:49,864 INFO - closeConnect
+2019-02-18 17:36:49,865 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:36:49,867 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:36:49,868 INFO - closeConnect
+2019-02-18 17:36:49,869 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:36:49,870 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:36:49,871 INFO - closeConnect
+2019-02-18 17:36:49,871 INFO - select * from operation_types None
+2019-02-18 17:36:49,872 INFO - closeConnect
+2019-02-18 17:37:14,084 INFO - init connection
+2019-02-18 17:37:14,086 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:37:14,087 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:37:14,088 INFO - closeConnect
+2019-02-18 17:37:14,088 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:37:14,089 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:37:14,089 INFO - closeConnect
+2019-02-18 17:37:14,090 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:37:14,090 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:37:14,090 INFO - closeConnect
+2019-02-18 17:37:14,091 INFO - select * from operation_types None
+2019-02-18 17:37:14,091 INFO - closeConnect
+2019-02-18 17:38:44,397 INFO - init connection
+2019-02-18 17:38:44,401 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:38:44,402 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:38:44,402 INFO - closeConnect
+2019-02-18 17:38:44,402 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:38:44,403 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:38:44,403 INFO - closeConnect
+2019-02-18 17:38:44,403 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:38:44,404 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:38:44,405 INFO - closeConnect
+2019-02-18 17:38:44,405 INFO - select * from operation_types None
+2019-02-18 17:38:44,406 INFO - closeConnect
+2019-02-18 17:38:50,803 INFO - init connection
+2019-02-18 17:38:50,804 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:38:50,805 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:38:50,805 INFO - closeConnect
+2019-02-18 17:38:50,805 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:38:50,805 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:38:50,805 INFO - closeConnect
+2019-02-18 17:38:50,806 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:38:50,806 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:38:50,806 INFO - closeConnect
+2019-02-18 17:38:50,807 INFO - select * from operation_types None
+2019-02-18 17:38:50,807 INFO - closeConnect
+2019-02-18 17:38:50,808 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:38:50,809 INFO - closeConnect
+2019-02-18 17:38:50,809 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:38:50,810 INFO - closeConnect
+2019-02-18 17:38:50,810 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:38:50,810 INFO - closeConnect
+2019-02-18 17:38:50,810 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:38:50,812 INFO - closeConnect
+2019-02-18 17:38:50,812 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:38:50,813 INFO - closeConnect
+2019-02-18 17:38:50,814 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 17:38:50,814 INFO - closeConnect
+2019-02-18 17:38:50,815 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 17:38:50,816 INFO - closeConnect
+2019-02-18 17:39:12,336 INFO - init connection
+2019-02-18 17:39:12,338 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:39:12,339 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:39:12,339 INFO - closeConnect
+2019-02-18 17:39:12,339 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:39:12,340 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:39:12,340 INFO - closeConnect
+2019-02-18 17:39:12,340 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:39:12,341 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:39:12,341 INFO - closeConnect
+2019-02-18 17:39:12,342 INFO - select * from operation_types None
+2019-02-18 17:39:12,342 INFO - closeConnect
+2019-02-18 17:39:12,343 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:39:12,343 INFO - closeConnect
+2019-02-18 17:39:12,343 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:39:12,344 INFO - closeConnect
+2019-02-18 17:39:12,344 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:39:12,345 INFO - closeConnect
+2019-02-18 17:39:12,345 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:39:12,345 INFO - closeConnect
+2019-02-18 17:39:12,345 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:39:12,345 INFO - closeConnect
+2019-02-18 17:39:12,346 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 17:39:12,346 INFO - closeConnect
+2019-02-18 17:39:12,347 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 17:39:12,347 INFO - closeConnect
+2019-02-18 17:39:35,276 INFO - init connection
+2019-02-18 17:39:35,278 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:39:35,279 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:39:35,279 INFO - closeConnect
+2019-02-18 17:39:35,279 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:39:35,280 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:39:35,280 INFO - closeConnect
+2019-02-18 17:39:35,280 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:39:35,281 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:39:35,281 INFO - closeConnect
+2019-02-18 17:39:35,281 INFO - select * from operation_types None
+2019-02-18 17:39:35,282 INFO - closeConnect
+2019-02-18 17:39:35,283 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:39:35,284 INFO - closeConnect
+2019-02-18 17:39:35,284 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:39:35,285 INFO - closeConnect
+2019-02-18 17:39:35,285 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:39:35,286 INFO - closeConnect
+2019-02-18 17:39:35,287 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:39:35,287 INFO - closeConnect
+2019-02-18 17:39:35,288 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:39:35,289 INFO - closeConnect
+2019-02-18 17:39:35,289 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 17:39:35,290 INFO - closeConnect
+2019-02-18 17:39:35,290 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 17:39:35,291 INFO - closeConnect
+2019-02-18 17:39:49,583 INFO - init connection
+2019-02-18 17:39:49,584 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:39:49,585 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:39:49,586 INFO - closeConnect
+2019-02-18 17:39:49,586 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:39:49,587 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:39:49,587 INFO - closeConnect
+2019-02-18 17:39:49,587 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:39:49,588 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:39:49,588 INFO - closeConnect
+2019-02-18 17:39:49,588 INFO - select * from operation_types None
+2019-02-18 17:39:49,589 INFO - closeConnect
+2019-02-18 17:39:49,589 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:39:49,590 INFO - closeConnect
+2019-02-18 17:39:49,591 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:39:49,591 INFO - closeConnect
+2019-02-18 17:39:49,592 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:39:49,593 INFO - closeConnect
+2019-02-18 17:39:49,593 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:39:49,594 INFO - closeConnect
+2019-02-18 17:39:49,594 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:39:49,595 INFO - closeConnect
+2019-02-18 17:39:49,596 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 17:39:49,596 INFO - closeConnect
+2019-02-18 17:39:49,597 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 17:39:49,598 INFO - closeConnect
+2019-02-18 17:40:22,643 INFO - init connection
+2019-02-18 17:40:22,645 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:40:22,646 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:40:22,646 INFO - closeConnect
+2019-02-18 17:40:22,646 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:40:22,647 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:40:22,647 INFO - closeConnect
+2019-02-18 17:40:22,647 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:40:22,648 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:40:22,648 INFO - closeConnect
+2019-02-18 17:40:22,648 INFO - select * from operation_types None
+2019-02-18 17:40:22,649 INFO - closeConnect
+2019-02-18 17:40:22,650 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:40:22,650 INFO - closeConnect
+2019-02-18 17:40:22,651 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:40:22,652 INFO - closeConnect
+2019-02-18 17:40:22,652 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:40:22,653 INFO - closeConnect
+2019-02-18 17:40:22,653 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:40:22,653 INFO - closeConnect
+2019-02-18 17:40:22,653 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:40:22,654 INFO - closeConnect
+2019-02-18 17:40:22,655 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 17:40:22,656 INFO - closeConnect
+2019-02-18 17:40:22,656 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 17:40:22,657 INFO - closeConnect
+2019-02-18 17:40:42,025 INFO - init connection
+2019-02-18 17:40:42,026 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:40:42,027 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:40:42,027 INFO - closeConnect
+2019-02-18 17:40:42,027 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:40:42,029 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:40:42,029 INFO - closeConnect
+2019-02-18 17:40:42,029 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:40:42,029 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:40:42,029 INFO - closeConnect
+2019-02-18 17:40:42,029 INFO - select * from operation_types None
+2019-02-18 17:40:42,030 INFO - closeConnect
+2019-02-18 17:40:42,030 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:40:42,032 INFO - closeConnect
+2019-02-18 17:40:42,032 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:40:42,033 INFO - closeConnect
+2019-02-18 17:40:42,034 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:40:42,035 INFO - closeConnect
+2019-02-18 17:40:42,035 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:40:42,037 INFO - closeConnect
+2019-02-18 17:40:42,037 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:41:19,000 INFO - init connection
+2019-02-18 17:41:19,003 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:41:19,004 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:41:19,004 INFO - closeConnect
+2019-02-18 17:41:19,004 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:41:19,005 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:41:19,005 INFO - closeConnect
+2019-02-18 17:41:19,005 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:41:19,006 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:41:19,006 INFO - closeConnect
+2019-02-18 17:41:19,006 INFO - select * from operation_types None
+2019-02-18 17:41:19,007 INFO - closeConnect
+2019-02-18 17:41:19,007 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:41:19,008 INFO - closeConnect
+2019-02-18 17:41:19,008 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:41:19,009 INFO - closeConnect
+2019-02-18 17:41:19,010 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:41:19,011 INFO - closeConnect
+2019-02-18 17:41:19,013 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:41:19,014 INFO - closeConnect
+2019-02-18 17:41:19,015 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:41:59,569 INFO - init connection
+2019-02-18 17:41:59,571 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:41:59,572 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:41:59,572 INFO - closeConnect
+2019-02-18 17:41:59,572 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:41:59,573 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:41:59,573 INFO - closeConnect
+2019-02-18 17:41:59,573 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:41:59,574 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:41:59,574 INFO - closeConnect
+2019-02-18 17:41:59,574 INFO - select * from operation_types None
+2019-02-18 17:41:59,575 INFO - closeConnect
+2019-02-18 17:41:59,575 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:41:59,577 INFO - closeConnect
+2019-02-18 17:41:59,577 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:41:59,579 INFO - closeConnect
+2019-02-18 17:41:59,580 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:41:59,581 INFO - closeConnect
+2019-02-18 17:41:59,581 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:41:59,583 INFO - closeConnect
+2019-02-18 17:41:59,583 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:42:25,824 INFO - init connection
+2019-02-18 17:42:25,825 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:42:25,826 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:42:25,826 INFO - closeConnect
+2019-02-18 17:42:25,826 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:42:25,827 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:42:25,827 INFO - closeConnect
+2019-02-18 17:42:25,828 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:42:25,829 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:42:25,829 INFO - closeConnect
+2019-02-18 17:42:25,829 INFO - select * from operation_types None
+2019-02-18 17:42:25,830 INFO - closeConnect
+2019-02-18 17:42:25,830 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:42:25,831 INFO - closeConnect
+2019-02-18 17:42:25,832 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:42:25,833 INFO - closeConnect
+2019-02-18 17:42:25,834 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:42:25,835 INFO - closeConnect
+2019-02-18 17:42:25,836 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:42:25,837 INFO - closeConnect
+2019-02-18 17:42:25,837 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:42:25,838 INFO - closeConnect
+2019-02-18 17:42:25,838 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 17:42:25,839 INFO - closeConnect
+2019-02-18 17:42:25,840 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 17:42:25,841 INFO - closeConnect
+2019-02-18 17:42:34,426 INFO - init connection
+2019-02-18 17:42:34,429 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:42:34,430 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:42:34,430 INFO - closeConnect
+2019-02-18 17:42:34,430 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:42:34,431 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:42:34,431 INFO - closeConnect
+2019-02-18 17:42:34,431 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:42:34,432 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:42:34,432 INFO - closeConnect
+2019-02-18 17:42:34,432 INFO - select * from operation_types None
+2019-02-18 17:42:34,433 INFO - closeConnect
+2019-02-18 17:42:34,433 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:42:34,434 INFO - closeConnect
+2019-02-18 17:42:34,435 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:42:34,436 INFO - closeConnect
+2019-02-18 17:42:34,437 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:42:34,438 INFO - closeConnect
+2019-02-18 17:42:34,439 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:42:34,440 INFO - closeConnect
+2019-02-18 17:42:34,441 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:42:34,441 INFO - closeConnect
+2019-02-18 17:42:34,442 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 17:42:34,443 INFO - closeConnect
+2019-02-18 17:42:34,443 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 17:42:34,444 INFO - closeConnect
+2019-02-18 17:42:45,952 INFO - init connection
+2019-02-18 17:42:45,953 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:42:45,954 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:42:45,954 INFO - closeConnect
+2019-02-18 17:42:45,954 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:42:45,955 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:42:45,955 INFO - closeConnect
+2019-02-18 17:42:45,955 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:42:45,955 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:42:45,956 INFO - closeConnect
+2019-02-18 17:42:45,956 INFO - select * from operation_types None
+2019-02-18 17:42:45,957 INFO - closeConnect
+2019-02-18 17:42:45,957 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:42:45,961 INFO - closeConnect
+2019-02-18 17:42:45,962 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:42:45,963 INFO - closeConnect
+2019-02-18 17:42:45,964 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:42:45,964 INFO - closeConnect
+2019-02-18 17:42:45,965 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:42:45,966 INFO - closeConnect
+2019-02-18 17:42:45,966 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:42:45,967 INFO - closeConnect
+2019-02-18 17:42:45,967 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 17:42:45,968 INFO - closeConnect
+2019-02-18 17:42:45,968 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 17:42:45,969 INFO - closeConnect
+2019-02-18 17:43:32,133 INFO - init connection
+2019-02-18 17:43:32,137 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 17:43:32,139 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 17:43:32,139 INFO - closeConnect
+2019-02-18 17:43:32,140 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 17:43:32,140 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 17:43:32,140 INFO - closeConnect
+2019-02-18 17:43:32,141 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 17:43:32,141 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 17:43:32,141 INFO - closeConnect
+2019-02-18 17:43:32,141 INFO - select * from operation_types None
+2019-02-18 17:43:32,142 INFO - closeConnect
+2019-02-18 17:43:32,142 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:43:32,143 INFO - closeConnect
+2019-02-18 17:43:32,144 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 17:43:32,145 INFO - closeConnect
+2019-02-18 17:43:32,145 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 17:43:32,146 INFO - closeConnect
+2019-02-18 17:43:32,146 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 17:43:32,147 INFO - closeConnect
+2019-02-18 17:43:32,147 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 17:43:32,148 INFO - closeConnect
+2019-02-18 17:43:32,148 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 17:43:32,150 INFO - closeConnect
+2019-02-18 17:43:32,150 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 17:43:32,150 INFO - closeConnect
+2019-02-18 18:15:45,122 INFO - init connection
+2019-02-18 18:15:45,617 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 18:15:45,623 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 18:15:45,623 INFO - closeConnect
+2019-02-18 18:15:45,623 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 18:15:45,624 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 18:15:45,624 INFO - closeConnect
+2019-02-18 18:15:45,625 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 18:15:45,625 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 18:15:45,625 INFO - closeConnect
+2019-02-18 18:15:45,625 INFO - select * from operation_types None
+2019-02-18 18:15:45,627 INFO - closeConnect
+2019-02-18 18:15:45,627 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:15:45,627 INFO - closeConnect
+2019-02-18 18:15:45,628 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:15:45,629 INFO - closeConnect
+2019-02-18 18:15:45,630 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 18:15:45,631 INFO - closeConnect
+2019-02-18 18:15:45,631 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 18:15:45,632 INFO - closeConnect
+2019-02-18 18:15:45,633 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 18:15:45,633 INFO - closeConnect
+2019-02-18 18:15:45,634 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 18:15:45,634 INFO - closeConnect
+2019-02-18 18:15:45,634 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 18:15:45,635 INFO - closeConnect
+2019-02-18 18:19:58,618 INFO - init connection
+2019-02-18 18:19:58,621 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 18:19:58,622 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 18:19:58,622 INFO - closeConnect
+2019-02-18 18:19:58,622 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 18:19:58,623 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 18:19:58,623 INFO - closeConnect
+2019-02-18 18:19:58,623 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 18:19:58,624 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 18:19:58,624 INFO - closeConnect
+2019-02-18 18:19:58,624 INFO - select * from operation_types None
+2019-02-18 18:19:58,625 INFO - closeConnect
+2019-02-18 18:19:58,625 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:19:58,625 INFO - closeConnect
+2019-02-18 18:20:18,343 INFO - init connection
+2019-02-18 18:20:18,344 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 18:20:18,344 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 18:20:18,344 INFO - closeConnect
+2019-02-18 18:20:18,345 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 18:20:18,345 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 18:20:18,345 INFO - closeConnect
+2019-02-18 18:20:18,345 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 18:20:18,346 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 18:20:18,346 INFO - closeConnect
+2019-02-18 18:20:18,347 INFO - select * from operation_types None
+2019-02-18 18:20:18,347 INFO - closeConnect
+2019-02-18 18:20:18,347 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:20:18,348 INFO - closeConnect
+2019-02-18 18:21:21,554 INFO - init connection
+2019-02-18 18:21:21,557 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 18:21:21,558 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 18:21:21,558 INFO - closeConnect
+2019-02-18 18:21:21,558 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 18:21:21,559 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 18:21:21,559 INFO - closeConnect
+2019-02-18 18:21:21,559 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 18:21:21,560 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 18:21:21,560 INFO - closeConnect
+2019-02-18 18:21:21,560 INFO - select * from operation_types None
+2019-02-18 18:21:21,561 INFO - closeConnect
+2019-02-18 18:21:21,561 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:21:21,562 INFO - closeConnect
+2019-02-18 18:22:06,222 INFO - init connection
+2019-02-18 18:22:06,224 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 18:22:06,225 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 18:22:06,225 INFO - closeConnect
+2019-02-18 18:22:06,226 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 18:22:06,226 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 18:22:06,227 INFO - closeConnect
+2019-02-18 18:22:06,228 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 18:22:06,228 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 18:22:06,228 INFO - closeConnect
+2019-02-18 18:22:06,228 INFO - select * from operation_types None
+2019-02-18 18:22:06,229 INFO - closeConnect
+2019-02-18 18:22:06,229 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:22:06,229 INFO - closeConnect
+2019-02-18 18:22:06,230 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:22:06,230 INFO - closeConnect
+2019-02-18 18:22:06,230 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 18:22:06,231 INFO - closeConnect
+2019-02-18 18:22:06,231 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 18:22:06,232 INFO - closeConnect
+2019-02-18 18:22:06,232 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 18:22:06,233 INFO - closeConnect
+2019-02-18 18:22:06,233 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 18:22:06,233 INFO - closeConnect
+2019-02-18 18:22:06,234 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 18:22:06,234 INFO - closeConnect
+2019-02-18 18:24:19,863 INFO - init connection
+2019-02-18 18:24:19,865 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 18:24:19,866 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 18:24:19,867 INFO - closeConnect
+2019-02-18 18:24:19,867 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 18:24:19,867 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 18:24:19,867 INFO - closeConnect
+2019-02-18 18:24:19,867 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 18:24:19,867 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 18:24:19,868 INFO - closeConnect
+2019-02-18 18:24:19,868 INFO - select * from operation_types None
+2019-02-18 18:24:19,869 INFO - closeConnect
+2019-02-18 18:24:19,869 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:24:19,870 INFO - closeConnect
+2019-02-18 18:24:19,870 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:24:19,870 INFO - closeConnect
+2019-02-18 18:24:19,871 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 18:24:19,871 INFO - closeConnect
+2019-02-18 18:24:19,872 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 18:24:19,872 INFO - closeConnect
+2019-02-18 18:24:19,872 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 18:24:19,873 INFO - closeConnect
+2019-02-18 18:24:19,873 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 18:24:19,874 INFO - closeConnect
+2019-02-18 18:24:19,874 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 18:24:19,875 INFO - closeConnect
+2019-02-18 18:31:06,392 INFO - init connection
+2019-02-18 18:31:06,396 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 18:31:06,397 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 18:31:06,397 INFO - closeConnect
+2019-02-18 18:31:06,397 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 18:31:06,398 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 18:31:06,398 INFO - closeConnect
+2019-02-18 18:31:06,398 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 18:31:06,399 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 18:31:06,399 INFO - closeConnect
+2019-02-18 18:31:06,399 INFO - select * from operation_types None
+2019-02-18 18:31:06,400 INFO - closeConnect
+2019-02-18 18:31:06,400 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:31:06,401 INFO - closeConnect
+2019-02-18 18:31:06,402 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:31:06,403 INFO - closeConnect
+2019-02-18 18:31:06,403 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 18:31:06,404 INFO - closeConnect
+2019-02-18 18:31:06,404 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 18:31:06,405 INFO - closeConnect
+2019-02-18 18:31:06,405 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 18:31:06,406 INFO - closeConnect
+2019-02-18 18:31:06,408 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 18:31:06,409 INFO - closeConnect
+2019-02-18 18:31:06,409 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 18:31:06,410 INFO - closeConnect
+2019-02-18 18:32:55,429 INFO - init connection
+2019-02-18 18:32:55,439 INFO - CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); None
+2019-02-18 18:32:55,439 ERROR - execute failed: CREATE TABLE `time_records` (
+                        `	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                        `operation_name`	TEXT NOT NULL,
+                        `operation_type`	INTEGER NOT NULL,
+                        `operation_time`	BLOB NOT NULL,
+                        `concession_grade`	INTEGER NOT NULL DEFAULT 0
+                        ); : table `time_records` already exists
+2019-02-18 18:32:55,440 INFO - closeConnect
+2019-02-18 18:32:55,440 INFO - CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); None
+2019-02-18 18:32:55,441 ERROR - execute failed: CREATE TABLE `operation_types` (
+                        `operation_number`	INTEGER UNIQUE,
+                        `operation_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`operation_number`)
+                        ); : table `operation_types` already exists
+2019-02-18 18:32:55,441 INFO - closeConnect
+2019-02-18 18:32:55,441 INFO - CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  None
+2019-02-18 18:32:55,442 ERROR - execute failed: CREATE TABLE `concession_grades` (
+                        `concession_grade`	INTEGER NOT NULL UNIQUE,
+                        `concession_name`	TEXT NOT NULL UNIQUE,
+                        PRIMARY KEY(`concession_grade`)
+                        );  : table `concession_grades` already exists
+2019-02-18 18:32:55,442 INFO - closeConnect
+2019-02-18 18:32:55,442 INFO - select * from operation_types None
+2019-02-18 18:32:55,444 INFO - closeConnect
+2019-02-18 18:32:55,444 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:32:55,445 INFO - closeConnect
+2019-02-18 18:32:55,446 INFO - select * from time_records where operation_type = 1 None
+2019-02-18 18:32:55,446 INFO - closeConnect
+2019-02-18 18:32:55,446 INFO - select * from time_records where operation_type = 2 None
+2019-02-18 18:32:55,448 INFO - closeConnect
+2019-02-18 18:32:55,448 INFO - select * from time_records where operation_type = 3 None
+2019-02-18 18:32:55,449 INFO - closeConnect
+2019-02-18 18:32:55,449 INFO - select * from time_records where operation_type = 4 None
+2019-02-18 18:32:55,450 INFO - closeConnect
+2019-02-18 18:32:55,450 INFO - select * from time_records where operation_type = 5 None
+2019-02-18 18:32:55,451 INFO - closeConnect
+2019-02-18 18:32:55,451 INFO - select * from time_records where operation_type = 6 None
+2019-02-18 18:32:55,451 INFO - closeConnect
