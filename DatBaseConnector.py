@@ -70,6 +70,8 @@ class datBaseConnector():
             result = self.getListOfOperations(self.cursor)
         elif(returnMode == 'types'):
             result = self.getTypes(self.cursor)
+        elif(returnMode == 'oper_descr'):
+            result = self.getDictionaryOfOperationsAndDescriptions(self.cursor)
         self.closeConnect()
         return result
         
@@ -92,41 +94,6 @@ class datBaseConnector():
                         PRIMARY KEY(`concession_grade`)
                         ); """)
         
-    def createTestData(self):
-        1
-#        self.execute("delete from human_resources")
-#        #имя, позывной, инфо, отряд
-#        departaments = ['Тверь', 'Ржев', 'Кимры', 'Конаково']
-#        for dapart in departaments:
-#            i = 0
-#            while i < 10:
-#                self.insertNewVolunteer(['Имя' + dapart + str(i), dapart + str(i), 'info ' + str(i), dapart])
-#                i += 1
-#        
-#    def selectAllVolunteeres(self): 
-#        stringToExec = "select full_Name from human_resources"
-#        return self.execute(stringToExec, returnMode = 'strCostr')
-#    
-#    def insertNewVolunteer(self, insertData):
-#        stringToExec = "insert into human_resources values(NULL,?,?,?,?)"
-#        self.execute(stringToExec, insertData)
-#        
-#    def isertNick(self, nick):
-#        stringToExec = "insert into empty_callsign values(NULL, '" + nick + "')"
-#        self.execute(stringToExec)
-#            
-#    def emptyNick(self, checkNickState):
-#        stringToExec = "select * from empty_callsign where callsign = '" + checkNickState + "'"
-#        return self.execute(stringToExec, returnMode = 'fetchOne')
-#    
-#    def deleteNick(self, nick):
-#        stringToExec = "delete from empty_callsign where callsign = '" + nick + "'"
-#        self.execute(stringToExec)
-#    
-#    def selectAllUniqDepartaments(self):
-#        stringToExec = "select distinct departament from human_resources"
-#        return self.execute(stringToExec, returnMode = 'strCostr')
-    
     def selectByType(self, operationType): 
         stringToExec = "select * from time_records where operation_type = " + str(operationType)
         return self.execute(stringToExec,  returnMode = 'operstions')
@@ -135,41 +102,10 @@ class datBaseConnector():
         stringToExec = "select * from operation_types"
         return self.execute(stringToExec,  returnMode = 'types')
     
-#    def updateVolunteer(self, sovaVolont):
-#        stringToExec = "update human_resources set full_name = '"  + sovaVolont.getName() + "', "
-#        stringToExec += "callsign = '"  + sovaVolont.getNick() + "', "
-#        stringToExec += "additional_information = '"  + sovaVolont.getInfo() + "', "
-#        stringToExec += "departament = '"  + sovaVolont.getDepartament() + "' "
-#        stringToExec += "where id = " + sovaVolont.getId()
-#        self.execute(stringToExec)
-#    
-#    def existNickInNickTable(self, sovaVolontCall):
-#        stringToExec = "select * from empty_callsign where upper(callsign) = upper('"
-#        stringToExec +=  sovaVolontCall + "') limit 1"
-#        return self.execute(stringToExec, returnMode = 'fetchOne') != None
-#    
-#    def existNickInPeopleTable(self, sovaVolontCall):
-#        stringToExec = "select * from human_resources where upper(callsign) = upper('"
-#        stringToExec +=  sovaVolontCall + "') limit 1"
-#        return self.execute(stringToExec, returnMode = 'fetchOne') != None
-#    
-#    def selectVolunteerById(self, idDB):
-#        stringToExec = "select * from human_resources where id = " + str(idDB)
-#        getStr = str(self.execute(stringToExec, returnMode = 'fetchOne'))
-#        getStr = getStr.replace("(", "")
-#        getStr = getStr.replace(")", "")
-#        getStr = getStr.replace("'", "")
-#        arr = getStr.split(', ')
-#        return Volunteer(arr)
-#    
-#    def selectByDepartament(self, departament): 
-#        stringToExec = "select * from human_resources where departament = '" + departament + "' order by full_name asc"
-#        return self.execute(stringToExec, returnMode = 'fetchAll')
-#    
-#    def deletFromVolunteeres(self, id):
-#        stringToExec = "delete from human_resources where id = " + str(id)
-#        self.execute(stringToExec)
-#    
+    def selectUniqeDescriptions(self):
+        stringToExec = "select distinct * from time_records"
+        return self.execute(stringToExec,  returnMode = 'oper_descr')
+     
     def getListOfOperations(self, cursor):
         operations = []
         firstDat = cursor.fetchone()
@@ -180,6 +116,23 @@ class datBaseConnector():
             operations.append(Operation(firstDat))
             firstDat = cursor.fetchone()
         return operations
+    
+    def getDictionaryOfOperationsAndDescriptions(self, cursor):
+        operationsAndDescriptions = {}
+        firstDat = cursor.fetchone()
+        if firstDat == None:
+            return None
+#        print(firstDat)
+        operation = Operation(firstDat)
+#        print('types? ' + str(operation.getOperation_type()) + ' ' + str(operation.getOperation_name()))
+        operationsAndDescriptions[operation.getOperation_name()] = operation.getOperation_type()
+        while firstDat is not None:
+            operation = Operation(firstDat)
+#            print('types? ' + str(operation.getOperation_type()) + ' ' + str(operation.getOperation_name()))
+            operationsAndDescriptions[operation.getOperation_name()] = operation.getOperation_type()
+            firstDat = cursor.fetchone()
+        
+        return operationsAndDescriptions
     
     def getTypes(self, cursor):
         types = []

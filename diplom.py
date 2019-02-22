@@ -4,9 +4,12 @@ Created on Mon Feb 18 16:36:26 2019
 
 @author: dmitry.efremov
 """
+import random
+import math
 from DatBaseConnector import datBaseConnector 
 from DatBaseConnector import Operation
 
+#Класс описывающий среднее свремя по категориям для отдельного типа обращения
 class BaseTime():
     def __init__(self, timeObject):
         self.usualPerson = timeObject[0]  
@@ -19,6 +22,7 @@ class BaseTime():
     def getInvalidPerson(self):
         return self.invalidPerson
 
+#класс, хранящий словарь из типов операций и соответствующих им классов BaseTime
 class BaseTimeInfo():
     def __init__(self):
         self.times = {}
@@ -47,14 +51,52 @@ class BaseTimeInfo():
                                                                         summOperations3])
     
 #работа только с объектом типа Операция
-operation = Operation("12345")
+def randZeroToOne():
+    return random.random()
+       
+class inputQueueEngine():
+    def __init__(self, limitModelingTime):
+        self.limitModelingTime = limitModelingTime
+        self.initParameters()
+        self.initCommingQueue(10)
+    
+    def initParameters(self):
+        self.timeBr = BaseTimeInfo()
+        connect = datBaseConnector()
+        self.uniqeOperations = connect.selectUniqeDescriptions()
+        for element in connect.selectOperationTypes():
+            operations = connect.selectByType(element[0])
+            if operations != None:
+                self.timeBr.addNewCalc(operations)
+                
+    def initCommingQueue(self, middleTime):
+        self.commingQueue = []
+        tempTime = 0
+        while tempTime < self.limitModelingTime:
+            self.commingQueue.append((self.genRandomOparation(), self.randomGenTime(10)))
+            tempTime += 10
+            
+    def randomGenTime(self, time):
+        expFromLambda = math.exp(-time)
+        key = True
+        while key :
+            rand_l = randZeroToOne()
+            rand_r = rand_l * randZeroToOne()
+            num = 0
+            while not(rand_l >= expFromLambda and rand_r < expFromLambda):
+                rand_l = rand_r
+                rand_r *= randZeroToOne()
+                num += 1
+                if num > 1000:
+                    return time
+                if(num < 50 ):
+                    key = False
+        return num
+    
+    def genRandomOparation(self):
+        randDescr = random.choice(list(self.uniqeOperations.keys()))
+        randomOperType = self.uniqeOperations[randDescr]
+        print('' + randDescr + ' ' + str(randomOperType))
 
-timeBr = BaseTimeInfo()
-connect = datBaseConnector()
-for element in connect.selectOperationTypes():
-    operations = connect.selectByType(element[0])
-    if operations != None:
-        timeBr.addNewCalc(operations)
-#            print(op.toString())
 
 
