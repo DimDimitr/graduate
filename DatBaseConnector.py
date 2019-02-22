@@ -122,13 +122,10 @@ class datBaseConnector():
         firstDat = cursor.fetchone()
         if firstDat == None:
             return None
-#        print(firstDat)
         operation = Operation(firstDat)
-#        print('types? ' + str(operation.getOperation_type()) + ' ' + str(operation.getOperation_name()))
         operationsAndDescriptions[operation.getOperation_name()] = operation.getOperation_type()
         while firstDat is not None:
             operation = Operation(firstDat)
-#            print('types? ' + str(operation.getOperation_type()) + ' ' + str(operation.getOperation_name()))
             operationsAndDescriptions[operation.getOperation_name()] = operation.getOperation_type()
             firstDat = cursor.fetchone()
         
@@ -142,7 +139,6 @@ class datBaseConnector():
             types.append(firstDat)
             firstDat = cursor.fetchone()
         return types
-    
     
     def closeConnect(self):
         logging.info("closeConnect")

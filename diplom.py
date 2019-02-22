@@ -15,12 +15,15 @@ class BaseTime():
         self.usualPerson = timeObject[0]  
         self.oldPerson = timeObject[1]
         self.invalidPerson = timeObject[2]
+        self.timeList = timeObject
     def getUsualPerson(self):
         return self.usualPerson
     def getOldPerson(self):
         return self.oldPerson
     def getInvalidPerson(self):
         return self.invalidPerson
+    def getByNumber(self, number):
+        return self.timeList[number - 1] 
 
 #класс, хранящий словарь из типов операций и соответствующих им классов BaseTime
 class BaseTimeInfo():
@@ -54,49 +57,46 @@ class BaseTimeInfo():
 def randZeroToOne():
     return random.random()
        
-class inputQueueEngine():
+class InputQueueEngine():
     def __init__(self, limitModelingTime):
         self.limitModelingTime = limitModelingTime
-        self.initParameters()
-        self.initCommingQueue(10)
+        self.__initParameters()
+        self.__initCommingQueue(10)
     
-    def initParameters(self):
+    def __initParameters(self):
         self.timeBr = BaseTimeInfo()
-        connect = datBaseConnector()
-        self.uniqeOperations = connect.selectUniqeDescriptions()
-        for element in connect.selectOperationTypes():
-            operations = connect.selectByType(element[0])
+        self.connect = datBaseConnector()
+        self.uniqeOperations = self.connect.selectUniqeDescriptions()
+        for element in self.connect.selectOperationTypes():
+            operations = self.connect.selectByType(element[0])
             if operations != None:
                 self.timeBr.addNewCalc(operations)
                 
-    def initCommingQueue(self, middleTime):
+    def __initCommingQueue(self, middleTime):
         self.commingQueue = []
         tempTime = 0
         while tempTime < self.limitModelingTime:
-            self.commingQueue.append((self.genRandomOparation(), self.randomGenTime(10)))
-            tempTime += 10
-            
-    def randomGenTime(self, time):
-        expFromLambda = math.exp(-time)
-        key = True
-        while key :
-            rand_l = randZeroToOne()
-            rand_r = rand_l * randZeroToOne()
-            num = 0
-            while not(rand_l >= expFromLambda and rand_r < expFromLambda):
-                rand_l = rand_r
-                rand_r *= randZeroToOne()
-                num += 1
-                if num > 1000:
-                    return time
-                if(num < 50 ):
-                    key = False
-        return num
+            randomTimeComming = int(random.gauss(10, 3))
+            self.commingQueue.append((self.__genRandomOparation(), randomTimeComming))
+            tempTime += randomTimeComming
+        for tempRow in self.commingQueue:
+            print('gen time:' + str(tempRow[1]) + ' gen value:' + str(tempRow[0].toString()))
     
-    def genRandomOparation(self):
+    def __getRandomConcession(self):
+        return random.randint(1, 3)
+        
+    def __genRandomOparation(self):
         randDescr = random.choice(list(self.uniqeOperations.keys()))
         randomOperType = self.uniqeOperations[randDescr]
-        print('' + randDescr + ' ' + str(randomOperType))
+        randConcession = self.__getRandomConcession()
+        randomMidTime = self.timeBr.times[randomOperType].getByNumber(randConcession)
+        if(randomMidTime == 0):
+            randomMidTime = self.timeBr.times[randomOperType].getByNumber(1)
+        return Operation([1,
+                          randDescr,
+                          randomOperType,
+                          int(random.gauss(randomMidTime, 3)),
+                          randConcession])
 
 
-
+inputQueueEngine = InputQueueEngine(100)
