@@ -41,8 +41,6 @@ class Operation():
 class datBaseConnector():
     def __init__(self): 
         logging.info("init connection")
-        self.conn = sqlite3.connect('SovaVolunteeres.sqlite', timeout=100)
-        self.cursor = self.conn.cursor()
         self.creator()      
     
     #returnMode:
