@@ -102,12 +102,15 @@ class InputQueueEngine():
     def __initCommingQueue(self, middleTime):
         tempTime = 0
         while tempTime < self.limitModelingTime:
-            randomTimeComming = int(random.gauss(middleTime, 3))
-            while(randomTimeComming < 0):
-                randomTimeComming = int(random.gauss(middleTime, 3))
+            randomTimeComming = self.__getRandomCommingTime(middleTime)
             self.commingQueue.append(QueueUnit(self.__genRandomOperation(), randomTimeComming))
             tempTime += randomTimeComming
     
+    def __getRandomCommingTime(self, middleTime):
+        randomTimeComming = int(random.gauss(middleTime, 3))
+        while randomTimeComming <= 0:
+            randomTimeComming = int(random.gauss(middleTime, 3))
+        return randomTimeComming
 #   Возвращает случайный тип посетителя
     def __getRandomConcession(self):
         return random.randint(1, 3)
