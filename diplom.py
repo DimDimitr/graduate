@@ -106,14 +106,12 @@ class InputQueueEngine():
                 randomTimeComming = int(random.gauss(10, 3))
             self.commingQueue.append(QueueUnit(self.__genRandomOperation(), randomTimeComming))
             tempTime += randomTimeComming
-#        for tempRow in self.commingQueue:
-#            print('gen time:' + str(tempRow.getOperation().toString()) + ' gen value:' + str(tempRow.getUnitTime()))
     
 #   Возвращает случайный тип посетителя
     def __getRandomConcession(self):
         return random.randint(1, 3)
     
-#    Возвращает случайно попределенную операцию    
+#    Возвращает случайно определенную операцию    
     def __genRandomOperation(self):
         randDescr = random.choice(list(self.uniqeOperations.keys()))
         randomOperType = self.uniqeOperations[randDescr]
@@ -131,7 +129,7 @@ class InputQueueEngine():
         if(self.inputQueueGet()):
             return self.commingQueue.pop(0)
     
-#    Вернет либо операцию, если человек пришел, None если не
+#    Вернет операцию, если человек пришел, None если не
     def inputQueueGet(self):
 #        print("в очереди на приход - " + str(len(self.commingQueue)))
         if(len(self.commingQueue) > 0):
@@ -140,7 +138,7 @@ class InputQueueEngine():
     def printStat(self):
         for unit in self.commingQueue:
             print("элемент очереди " + unit.getOperation().toString())
-            print("имеет время обслуживания = " + str(unit.getUnitTime()))
+            print("имеет время прихода = " + str(unit.getUnitTime()))
                 
 
 #Класс описывающий кассу    
@@ -206,6 +204,7 @@ class TillEngine():
         for till in self.listOfTills:
             till.getStat()
 
+#основная модель очереди
 class GeneralStandartQueue():
     def __init__(self):
         self.generalQueue = []
