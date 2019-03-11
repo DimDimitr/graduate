@@ -8,6 +8,7 @@ import random
 import math
 from DatBaseConnector import datBaseConnector 
 from DatBaseConnector import Operation
+incomeMidTime = 5
 
 #Класс описывающий среднее свремя по категориям для отдельного типа обращения
 class BaseTime():
@@ -79,7 +80,7 @@ class InputQueueEngine():
         self.limitModelingTime = limitModelingTime
         self.__initParameters()
         self.commingQueue = []
-        self.__initCommingQueue(25)
+        self.__initCommingQueue(incomeMidTime)
 #    устанавливает исходные параметры
     def __initParameters(self):
 #        хранит в себе словарь из типа операции и времени для различных типов посетителей
@@ -101,9 +102,9 @@ class InputQueueEngine():
     def __initCommingQueue(self, middleTime):
         tempTime = 0
         while tempTime < self.limitModelingTime:
-            randomTimeComming = int(random.gauss(10, 3))
+            randomTimeComming = int(random.gauss(middleTime, 3))
             while(randomTimeComming < 0):
-                randomTimeComming = int(random.gauss(10, 3))
+                randomTimeComming = int(random.gauss(middleTime, 3))
             self.commingQueue.append(QueueUnit(self.__genRandomOperation(), randomTimeComming))
             tempTime += randomTimeComming
     
@@ -225,11 +226,11 @@ class GeneralStandartQueue():
 
 # главный класс-модель работы почты
 class PostModel():
-    def __init__(self, initTime):
+    def __init__(self, initTime, tillCount):
         self.initTime = initTime
         self.inputQueueEngine = InputQueueEngine(initTime)
         self.inputQueueEngine.printStat()
-        self.tillEngine = TillEngine(1)
+        self.tillEngine = TillEngine(tillCount)
         self.genQueue = GeneralStandartQueue()
         
     def start(self):
@@ -255,7 +256,8 @@ class PostModel():
         
     def getTillsStat(self):
         self.tillEngine.getStat()
-                
-posMod = PostModel(50)
+
+#создание модели для почты, параметры - время, количество точек обслуживания                 
+posMod = PostModel(100, 2)
 posMod.start()           
 posMod.getTillsStat()
