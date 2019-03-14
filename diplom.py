@@ -8,7 +8,7 @@ import random
 import math
 from DatBaseConnector import datBaseConnector 
 from DatBaseConnector import Operation
-incomeMidTime = 5
+incomeMidTime = 1
 
 #Класс описывающий среднее свремя по категориям для отдельного типа обращения
 class BaseTime():
@@ -261,6 +261,6 @@ class PostModel():
         self.tillEngine.getStat()
 
 #создание модели для почты, параметры - время, количество точек обслуживания                 
-posMod = PostModel(100, 2)
+posMod = PostModel(100, 5)
 posMod.start()           
 posMod.getTillsStat()

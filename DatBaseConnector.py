@@ -64,7 +64,7 @@ class datBaseConnector():
             result = self.cursor.fetchone()
         elif(returnMode == 'fetchAll'):
             result = self.cursor.fetchall()
-        elif(returnMode == 'operstions'):
+        elif(returnMode == 'operations'):
             result = self.getListOfOperations(self.cursor)
         elif(returnMode == 'types'):
             result = self.getTypes(self.cursor)
@@ -92,9 +92,10 @@ class datBaseConnector():
                         PRIMARY KEY(`concession_grade`)
                         ); """)
         
+#    выбор всех записей определенного типа
     def selectByType(self, operationType): 
         stringToExec = "select * from time_records where operation_type = " + str(operationType)
-        return self.execute(stringToExec,  returnMode = 'operstions')
+        return self.execute(stringToExec,  returnMode = 'operations')
     
     def selectOperationTypes(self):
         stringToExec = "select * from operation_types"
