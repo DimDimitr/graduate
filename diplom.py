@@ -6,9 +6,11 @@ Created on Mon Feb 18 16:36:26 2019
 """
 import random
 import math
+import statistics
 from DatBaseConnector import datBaseConnector 
 from DatBaseConnector import Operation
-incomeMidTime = 3
+incomeMidTime = 1
+separateValue = 2
 
 #Класс описывающий среднее свремя по категориям для отдельного типа обращения
 class BaseTime():
@@ -30,32 +32,20 @@ class BaseTime():
 class BaseTimeInfo():
     def __init__(self):
         self.times = {}
+        
     def addNewCalc(self, listOfOperations):
-        summOperations1 = 0
-        count1 = 0
-        summOperations2 = 0
-        count2 = 0
-        summOperations3 = 0
-        count3 = 0
+        operationTimes = [[], [], []]
         for operation in listOfOperations:
-            if(operation.getConcession_grade() == 1):
-                summOperations1 += operation.getOperation_time()
-                count1 += 1
-            elif(operation.getConcession_grade() == 2):  
-                summOperations2 += operation.getOperation_time()
-                count2 += 1
-            else:
-                summOperations3 += operation.getOperation_time()
-                count3 += 1
-        if(count1 != 0):
-           summOperations1 = summOperations1 /  count1
-        if(count2 != 0):
-           summOperations2 = summOperations2 /  count2
-        if(count3 != 0):
-           summOperations3 = summOperations3 /  count3
-        self.times[listOfOperations[0].getOperation_type()] = BaseTime([summOperations1,
-                                                                        summOperations2,
-                                                                        summOperations3])
+            operationTimes[operation.getConcession_grade() - 1].append(operation.getOperation_time())
+        def getMedian(timesList):
+            if(len(timesList) > 0):
+                return statistics.median(timesList)
+            return 1
+        
+        self.times[listOfOperations[0].getOperation_type()] = BaseTime(
+                [getMedian(operationTimes[0]),
+                getMedian(operationTimes[1]),
+                getMedian(operationTimes[2])])
     
 #работа только с объектом типа Операция
 def randZeroToOne():
@@ -74,8 +64,7 @@ class QueueUnit():
         self.unitTime -= 1
         if self.unitTime == 0:
             return self.operation 
-        return None
-        
+        return None   
         
 #Ксласс, описывающий заполнение входной очереди, на вход принимает время моделирования в минутах      
 class InputQueueEngine():
@@ -125,13 +114,16 @@ class InputQueueEngine():
         randomOperType = self.uniqeOperations[randDescr]
         randConcession = self.__getRandomConcession()
         randomMidTime = self.timeBr.times[randomOperType].getByNumber(randConcession)
-        if(randomMidTime == 0):
+        while(randomMidTime < 1):
             randomMidTime = self.timeBr.times[randomOperType].getByNumber(1)
         print('randomMidTime: ' + str(randomMidTime))
+        randomOperTime = int(random.gauss(randomMidTime, 3))
+        while(randomOperTime < 1):
+            randomOperTime = int(random.gauss(randomMidTime, 3))
         return Operation([1,
                           randDescr,
                           randomOperType,
-                          int(random.gauss(randomMidTime, 3)),
+                          randomOperTime,
                           randConcession])
     
     def tryToPopFromQueue(self):
@@ -149,7 +141,6 @@ class InputQueueEngine():
             print("элемент очереди " + unit.getOperation().toString())
             print("имеет время прихода = " + str(unit.getUnitTime()))
                 
-
 #Класс описывающий кассу    
 class Till():
     def __init__(self, tillNumber, serviceTime = 0):
@@ -214,13 +205,12 @@ class TillEngine():
             till.getStat()
 
 class QueueObject():
-    def __init__(self, operation):
+    def __init__(self, queueUnit):
         self.waitingTime = 0
-        self.operation = operation
+        self.queueUnit = queueUnit
      
     def increaseTime(self):
-        self.waitingTime += 1
-        
+        self.waitingTime += 1       
     
 #основная модель очереди
 class GeneralStandartQueue():
@@ -229,19 +219,20 @@ class GeneralStandartQueue():
         self.separation = separation
         self.waitingTimeArray = []
     
-    def addOperationIntoQueue(self, operation):
+    def addOperationIntoQueue(self, queueUnit):
         if(len(self.generalQueue) == 0):
             listOp = []
-            listOp.append(QueueObject(operation))
+            listOp.append(QueueObject(queueUnit))
             self.generalQueue.append(listOp)
         else:
             tempOp = self.generalQueue[len(self.generalQueue) - 1]
             if(len(tempOp) == self.separation):
                 listOp = []
-                listOp.append(QueueObject(operation))
+                listOp.append(QueueObject(queueUnit))
                 self.generalQueue.append(listOp)
             else:
-                tempOp.append(QueueObject(operation))
+                tempOp.append(QueueObject(queueUnit))
+            self.sortInQueuePart(self.generalQueue[len(self.generalQueue) - 1])
 #        print("after add" + str(self.generalQueue))
     
     def popOperationFromQueue(self):
@@ -251,20 +242,33 @@ class GeneralStandartQueue():
             if(len(self.generalQueue[0]) == 0):
                 self.generalQueue.pop()
         self.waitingTimeArray.append(popOper.waitingTime)
-        return popOper.operation
+        return popOper.queueUnit
     
     def increaseAllTimes(self):
         for arr in self.generalQueue:
             for queueObject in arr:
                 queueObject.increaseTime()
-     
+                
+    def sortInQueuePart(self, queuePart):
+        tempTr = []
+        for party in queuePart:
+            tempTr.append(party.queueUnit.operation.getOperation_time())
+        print('before')
+        print(tempTr)
+        queuePart = sorted(queuePart, key=lambda queueUnit: queueUnit.queueUnit.operation.getOperation_time())
+        tempTr = []
+        for party in queuePart:
+            tempTr.append(party.queueUnit.operation.getOperation_time())
+        print('after')
+        print(tempTr)
+    
     def getWaitingTimes(self):
         return self.waitingTimeArray
         
     def getFirstOperation(self):
         if(len(self.generalQueue) > 0):
             if(len(self.generalQueue[0]) > 0):
-                return self.generalQueue[0][0].operation
+                return self.generalQueue[0][0].queueUnit
         return None
     
     def getStat(self):
@@ -277,7 +281,7 @@ class PostModel():
         self.inputQueueEngine = InputQueueEngine(initTime)
         self.inputQueueEngine.printStat()
         self.tillEngine = TillEngine(tillCount)
-        self.genQueue = GeneralStandartQueue(3)
+        self.genQueue = GeneralStandartQueue(separateValue)
         
     def start(self):
         tempTime = 0
@@ -310,7 +314,7 @@ class PostModel():
         print(self.genQueue.getWaitingTimes())
 
 #создание модели для почты, параметры - время, количество точек обслуживания                 
-posMod = PostModel(40, 4)
+posMod = PostModel(80, 2)
 posMod.start()          
 posMod.getUserStat()  
 posMod.getTillsStat()
