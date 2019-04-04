@@ -8,7 +8,7 @@ import random
 import math
 from DatBaseConnector import datBaseConnector 
 from DatBaseConnector import Operation
-incomeMidTime = 1
+incomeMidTime = 3
 
 #Класс описывающий среднее свремя по категориям для отдельного типа обращения
 class BaseTime():
@@ -40,10 +40,13 @@ class BaseTimeInfo():
         for operation in listOfOperations:
             if(operation.getConcession_grade() == 1):
                 summOperations1 += operation.getOperation_time()
+                count1 += 1
             elif(operation.getConcession_grade() == 2):  
                 summOperations2 += operation.getOperation_time()
+                count2 += 1
             else:
                 summOperations3 += operation.getOperation_time()
+                count3 += 1
         if(count1 != 0):
            summOperations1 = summOperations1 /  count1
         if(count2 != 0):
@@ -81,6 +84,7 @@ class InputQueueEngine():
         self.__initParameters()
         self.commingQueue = []
         self.__initCommingQueue(incomeMidTime)
+        
 #    устанавливает исходные параметры
     def __initParameters(self):
 #        хранит в себе словарь из типа операции и времени для различных типов посетителей
@@ -107,9 +111,9 @@ class InputQueueEngine():
             tempTime += randomTimeComming
     
     def __getRandomCommingTime(self, middleTime):
-        randomTimeComming = int(random.gauss(middleTime, 3))
+        randomTimeComming = int(random.gauss(middleTime, 1))
         while randomTimeComming <= 0:
-            randomTimeComming = int(random.gauss(middleTime, 3))
+            randomTimeComming = int(random.gauss(middleTime, 1))
         return randomTimeComming
 #   Возвращает случайный тип посетителя
     def __getRandomConcession(self):
@@ -123,6 +127,7 @@ class InputQueueEngine():
         randomMidTime = self.timeBr.times[randomOperType].getByNumber(randConcession)
         if(randomMidTime == 0):
             randomMidTime = self.timeBr.times[randomOperType].getByNumber(1)
+        print('randomMidTime: ' + str(randomMidTime))
         return Operation([1,
                           randDescr,
                           randomOperType,
@@ -133,7 +138,7 @@ class InputQueueEngine():
         if(self.inputQueueGet()):
             return self.commingQueue.pop(0)
     
-#    Вернет операцию, если человек пришел, None если не
+#    Вернет операцию, если человек пришел, None если нет
     def inputQueueGet(self):
 #        print("в очереди на приход - " + str(len(self.commingQueue)))
         if(len(self.commingQueue) > 0):
@@ -166,7 +171,7 @@ class Till():
     def __increaseServiceCount(self):
         self.serviceCount += 1
     def changeStatus(self):
-        print("Till isVacant was and become " + str(self.isVacant) + str(not self.isVacant))
+#        print("Till isVacant was and become " + str(self.isVacant) + str(not self.isVacant))
         self.isVacant = not self.isVacant
         return self.isVacant
     
@@ -208,20 +213,58 @@ class TillEngine():
         for till in self.listOfTills:
             till.getStat()
 
+class QueueObject():
+    def __init__(self, operation):
+        self.waitingTime = 0
+        self.operation = operation
+     
+    def increaseTime(self):
+        self.waitingTime += 1
+        
+    
 #основная модель очереди
 class GeneralStandartQueue():
-    def __init__(self):
+    def __init__(self, separation):
         self.generalQueue = []
+        self.separation = separation
+        self.waitingTimeArray = []
     
     def addOperationIntoQueue(self, operation):
-        self.generalQueue.append(operation)
+        if(len(self.generalQueue) == 0):
+            listOp = []
+            listOp.append(QueueObject(operation))
+            self.generalQueue.append(listOp)
+        else:
+            tempOp = self.generalQueue[len(self.generalQueue) - 1]
+            if(len(tempOp) == self.separation):
+                listOp = []
+                listOp.append(QueueObject(operation))
+                self.generalQueue.append(listOp)
+            else:
+                tempOp.append(QueueObject(operation))
+#        print("after add" + str(self.generalQueue))
     
     def popOperationFromQueue(self):
-        return self.generalQueue.pop(0)
+        popOper = None
+        if(len(self.generalQueue) > 0):
+            popOper = self.generalQueue[0].pop(0)
+            if(len(self.generalQueue[0]) == 0):
+                self.generalQueue.pop()
+        self.waitingTimeArray.append(popOper.waitingTime)
+        return popOper.operation
     
+    def increaseAllTimes(self):
+        for arr in self.generalQueue:
+            for queueObject in arr:
+                queueObject.increaseTime()
+     
+    def getWaitingTimes(self):
+        return self.waitingTimeArray
+        
     def getFirstOperation(self):
         if(len(self.generalQueue) > 0):
-            return self.generalQueue[0]
+            if(len(self.generalQueue[0]) > 0):
+                return self.generalQueue[0][0].operation
         return None
     
     def getStat(self):
@@ -234,33 +277,40 @@ class PostModel():
         self.inputQueueEngine = InputQueueEngine(initTime)
         self.inputQueueEngine.printStat()
         self.tillEngine = TillEngine(tillCount)
-        self.genQueue = GeneralStandartQueue()
+        self.genQueue = GeneralStandartQueue(3)
         
     def start(self):
         tempTime = 0
         while(tempTime < self.initTime):
-            print("time now = " + str(tempTime))
+#            print("time now = " + str(tempTime))
 #           попытка добавить операцию в очередь, проверка очереди прихода
             tempOper = self.inputQueueEngine.tryToPopFromQueue()
-            self.genQueue.getStat()
+#            self.genQueue.getStat()
             if(tempOper != None):
                 self.genQueue.addOperationIntoQueue(tempOper)
-                print("operation add")
+
 #           попыка достать операцию и отправить на обслуживание
             tempOper = self.genQueue.getFirstOperation()
             if(tempOper):
                 if(self.tillEngine.callFromTill(tempOper.getOperation())):
                     self.genQueue.popOperationFromQueue()
-                    print("operation pop")
+                    
 #            уменьшает все время на кассах
             self.tillEngine.increaseTimeAllTills()
+#            добавляет время ожидания всем в очереди
+            self.genQueue.increaseAllTimes()
             tempTime += 1
+            
         self.inputQueueEngine.printStat()
         
     def getTillsStat(self):
         self.tillEngine.getStat()
+        
+    def getUserStat(self):
+        print(self.genQueue.getWaitingTimes())
 
 #создание модели для почты, параметры - время, количество точек обслуживания                 
-posMod = PostModel(100, 5)
-posMod.start()           
+posMod = PostModel(40, 4)
+posMod.start()          
+posMod.getUserStat()  
 posMod.getTillsStat()
