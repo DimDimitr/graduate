@@ -116,7 +116,6 @@ class InputQueueEngine():
         randomMidTime = self.timeBr.times[randomOperType].getByNumber(randConcession)
         while(randomMidTime < 1):
             randomMidTime = self.timeBr.times[randomOperType].getByNumber(1)
-        print('randomMidTime: ' + str(randomMidTime))
         randomOperTime = int(random.gauss(randomMidTime, 3))
         while(randomOperTime < 1):
             randomOperTime = int(random.gauss(randomMidTime, 3))
@@ -218,6 +217,7 @@ class GeneralStandartQueue():
         self.generalQueue = []
         self.separation = separation
         self.waitingTimeArray = []
+        self.queueMaxLen = 1
     
     def addOperationIntoQueue(self, queueUnit):
         if(len(self.generalQueue) == 0):
@@ -232,9 +232,20 @@ class GeneralStandartQueue():
                 self.generalQueue.append(listOp)
             else:
                 tempOp.append(QueueObject(queueUnit))
+            actualLength = self.getLengthCode()
+            if (self.queueMaxLen < actualLength):
+                    self.queueMaxLen = actualLength
             self.sortInQueuePart(self.generalQueue[len(self.generalQueue) - 1])
 #        print("after add" + str(self.generalQueue))
     
+    def getLengthCode(self):
+        if ((self.generalQueue) == None):
+            return 0
+        lentemp = 0
+        for queueObjectList in self.generalQueue:
+            lentemp += len(queueObjectList)
+        return lentemp
+        
     def popOperationFromQueue(self):
         popOper = None
         if(len(self.generalQueue) > 0):
@@ -264,6 +275,12 @@ class GeneralStandartQueue():
     
     def getWaitingTimes(self):
         return self.waitingTimeArray
+    
+    def getMaxQueueLen(self):
+        return self.queueMaxLen
+    
+    def getFinalLenState(self):
+        return len(self.generalQueue)
         
     def getFirstOperation(self):
         if(len(self.generalQueue) > 0):
@@ -279,7 +296,7 @@ class PostModel():
     def __init__(self, initTime, tillCount):
         self.initTime = initTime
         self.inputQueueEngine = InputQueueEngine(initTime)
-        self.inputQueueEngine.printStat()
+#        self.inputQueueEngine.printStat()
         self.tillEngine = TillEngine(tillCount)
         self.genQueue = GeneralStandartQueue(separateValue)
         
@@ -311,10 +328,15 @@ class PostModel():
         self.tillEngine.getStat()
         
     def getUserStat(self):
-        print(self.genQueue.getWaitingTimes())
+        print("Максимальное время ожмдания = " + str(max(self.genQueue.getWaitingTimes())))
+        print("Минимальное время ожмдания = " + str(min(self.genQueue.getWaitingTimes())))
+        print("Максимальная длина очереди = " + str(self.genQueue.getMaxQueueLen()))
+        print("Не успели обслужиться - " + str(self.genQueue.getFinalLenState()))
+        print("Среднее время ожидания = " + str(sum(self.genQueue.getWaitingTimes()) / len(self.genQueue.getWaitingTimes())))
+#        print(self.genQueue.getWaitingTimes())
 
 #создание модели для почты, параметры - время, количество точек обслуживания                 
-posMod = PostModel(80, 2)
+posMod = PostModel(80, 5)
 posMod.start()          
 posMod.getUserStat()  
 posMod.getTillsStat()
