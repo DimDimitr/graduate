@@ -9,7 +9,13 @@ import math
 import statistics
 from DatBaseConnector import datBaseConnector 
 from DatBaseConnector import Operation
-incomeMidTime = 1
+
+from tkinter import tix as tk
+from tkinter import *
+from tkinter import ttk
+
+
+incomeMidTime = 5
 
 #Класс описывающий среднее свремя по категориям для отдельного типа обращения
 class BaseTime():
@@ -296,6 +302,8 @@ class PostModel():
         self.initTime = initTime
         self.inputQueueEngine = InputQueueEngine(initTime)
 #        self.inputQueueEngine.printStat()
+        self.tillCount = tillCount
+        self.separateValue = separateValue
         self.tillEngine = TillEngine(tillCount)
         self.genQueue = GeneralStandartQueue(separateValue)
         
@@ -328,7 +336,9 @@ class PostModel():
         
     def getStatDict(self):
         waitingTimes = self.genQueue.getWaitingTimes()
-        return {'maxWaitingTime' : max(waitingTimes),
+        return {'tillCount'      : self.tillCount,
+                'separateValue'  : self.separateValue,
+                'maxWaitingTime' : max(waitingTimes),
                 'minWaitingTime' : min(waitingTimes),
                 'maxQueueLen'    : self.genQueue.getMaxQueueLen(),
                 'countIgnored'   : self.genQueue.getFinalLenState(),
@@ -363,12 +373,76 @@ class OptimalParameters():
                 self.listOfStat.append(posMod.getStatDict())
                 separateValue += 1
             tillCount += 1
-        print(self.listOfStat)
-                
+        print(self.listOfStat)               
 
-testProgon = OptimalParameters()
-testProgon.tryToOptimise()
+    def getOptimalParameters(self):
+        print()
+        
+#testProgon = OptimalParameters()
+#testProgon.tryToOptimise()
                 
 #        print(posMod.getStatDict())      
 #        posMod.getUserStat()  
 #        posMod.getTillsStat()
+
+class GeneralFrame(Frame):
+    def __init__(self, parent):
+        Frame.__init__(self, parent)   
+        self.parent = parent
+        self.modelTime = StringVar()
+        self.tillCount = StringVar()
+        self.separateValue = StringVar()
+        self.initUI()
+        
+    def initUI(self):
+        self.parent.title("SovaVolunteer")          
+        self.pack(fill=BOTH, expand=1)
+        frame = Frame(self)
+        frame.pack()
+        
+        labelName = Label(frame, text = 'Количество касс').grid(row = 0, column = 0, padx=5, pady=5)
+        POSField = Entry(frame, font='Arial 10', textvariable=self.tillCount)
+        POSField.grid(row = 0, column = 1, columnspan = 1,  padx=5, pady=5)
+        
+        labelName = Label(frame, text = 'Количество в контейнере').grid(row = 1, column = 0, padx=5, pady=5)
+        containerField = Entry(frame, font='Arial 10', textvariable=self.separateValue)
+        containerField.grid(row = 1, column = 1, columnspan = 1,  padx=5, pady=5)
+        
+        labelName = Label(frame, text = 'Время для моделирования').grid(row = 2, column = 0, padx=5, pady=5)
+        timeField = Entry(frame, font='Arial 10', textvariable=self.modelTime)
+        timeField.grid(row = 2, column = 1, columnspan = 1,  padx=5, pady=5)
+
+        button_accept = Button(frame, text = 'Рассчитать', command = self.calculateFunc)
+        button_accept.config(background="#96cafb")
+        button_accept.grid(row = 3, column = 1, columnspan = 1,  padx=5, pady=5)
+        
+        
+#        
+#        button_about = Button(frame, text = 'Что-то', command = self.calculateFunc)
+#        button_about.config(width="36",height="36", background="#96cafb")
+#        button_about.pack(side = RIGHT, padx=5, pady=5) 
+        frame.mainloop()
+        
+    def calculateFunc(self):
+        tillCount = int(self.tillCount.get())
+        separateValue = int(self.separateValue.get())
+        modelTime = int(self.modelTime.get())
+        postModel = PostModel(modelTime, tillCount, separateValue)
+        postModel.start()
+        print(postModel.getStatDict())
+#        testProgon = OptimalParameters()
+#        testProgon.tryToOptimise()
+        print(self.tillCount.get())
+        print(self.separateValue.get())
+        print(self.modelTime.get())
+        
+
+root=Tk()
+var = StringVar()
+root.geometry("350x300")
+style = ttk.Style(root)
+GeneralFrame(root)    
+root.mainloop()
+
+
+
