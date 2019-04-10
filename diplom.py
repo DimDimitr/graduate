@@ -10,7 +10,6 @@ import statistics
 from DatBaseConnector import datBaseConnector 
 from DatBaseConnector import Operation
 incomeMidTime = 1
-separateValue = 2
 
 #Класс описывающий среднее свремя по категориям для отдельного типа обращения
 class BaseTime():
@@ -264,14 +263,14 @@ class GeneralStandartQueue():
         tempTr = []
         for party in queuePart:
             tempTr.append(party.queueUnit.operation.getOperation_time())
-        print('before')
-        print(tempTr)
+#        print('before')
+#        print(tempTr)
         queuePart = sorted(queuePart, key=lambda queueUnit: queueUnit.queueUnit.operation.getOperation_time())
         tempTr = []
         for party in queuePart:
             tempTr.append(party.queueUnit.operation.getOperation_time())
-        print('after')
-        print(tempTr)
+#        print('after')
+#        print(tempTr)
     
     def getWaitingTimes(self):
         return self.waitingTimeArray
@@ -293,7 +292,7 @@ class GeneralStandartQueue():
 
 # главный класс-модель работы почты
 class PostModel():
-    def __init__(self, initTime, tillCount):
+    def __init__(self, initTime, tillCount, separateValue):
         self.initTime = initTime
         self.inputQueueEngine = InputQueueEngine(initTime)
 #        self.inputQueueEngine.printStat()
@@ -322,21 +321,54 @@ class PostModel():
             self.genQueue.increaseAllTimes()
             tempTime += 1
             
-        self.inputQueueEngine.printStat()
+#        self.inputQueueEngine.printStat()
         
     def getTillsStat(self):
         self.tillEngine.getStat()
         
+    def getStatDict(self):
+        waitingTimes = self.genQueue.getWaitingTimes()
+        return {'maxWaitingTime' : max(waitingTimes),
+                'minWaitingTime' : min(waitingTimes),
+                'maxQueueLen'    : self.genQueue.getMaxQueueLen(),
+                'countIgnored'   : self.genQueue.getFinalLenState(),
+                'serviceMidTime' : sum(waitingTimes) / len(waitingTimes)}
+        
     def getUserStat(self):
-        print("Максимальное время ожмдания = " + str(max(self.genQueue.getWaitingTimes())))
-        print("Минимальное время ожмдания = " + str(min(self.genQueue.getWaitingTimes())))
-        print("Максимальная длина очереди = " + str(self.genQueue.getMaxQueueLen()))
-        print("Не успели обслужиться - " + str(self.genQueue.getFinalLenState()))
-        print("Среднее время ожидания = " + str(sum(self.genQueue.getWaitingTimes()) / len(self.genQueue.getWaitingTimes())))
+        stat = self.getStatDict()
+        print("Максимальное время ожмдания = " + str(stat['maxWaitingTime']))
+        print("Минимальное время ожмдания = " + str(stat['minWaitingTime']))
+        print("Максимальная длина очереди = " + str(stat['maxQueueLen']))
+        print("Не успели обслужиться - " + str(stat['countIgnored']))
+        print("Среднее время ожидания = " + str(stat['serviceMidTime']))
 #        print(self.genQueue.getWaitingTimes())
 
-#создание модели для почты, параметры - время, количество точек обслуживания                 
-posMod = PostModel(80, 5)
-posMod.start()          
-posMod.getUserStat()  
-posMod.getTillsStat()
+#создание модели для почты, параметры - время, количество точек обслуживания   
+generalTimeToModel = 80
+
+class OptimalParameters():
+    def __init__(self):     
+        self.modelTime = 80
+        self.tillCountMax = 5
+        self.separateValueMax = 10
+        self.listOfStat = []
+        
+    def tryToOptimise(self): 
+        tillCount = 1
+        while(tillCount <= self.tillCountMax):
+            separateValue = 1
+            while(separateValue <= self.separateValueMax):
+                posMod = PostModel(self.modelTime, tillCount, separateValue)
+                posMod.start() 
+                self.listOfStat.append(posMod.getStatDict())
+                separateValue += 1
+            tillCount += 1
+        print(self.listOfStat)
+                
+
+testProgon = OptimalParameters()
+testProgon.tryToOptimise()
+                
+#        print(posMod.getStatDict())      
+#        posMod.getUserStat()  
+#        posMod.getTillsStat()
