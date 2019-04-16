@@ -9,13 +9,14 @@ import math
 import statistics
 from DatBaseConnector import datBaseConnector 
 from DatBaseConnector import Operation
+import matplotlib.pyplot as plt
 
 from tkinter import tix as tk
 from tkinter import *
 from tkinter import ttk
 
 repeatCount = 20
-incomeMidTime = 1
+incomeMidTime = 7
 
 #Класс описывающий среднее свремя по категориям для отдельного типа обращения
 class BaseTime():
@@ -362,6 +363,17 @@ class OptimalParameters():
                 separateValue += 1
             tillCount += 1              
 
+    def drawPlotByName(self, namePar):
+        listToDraw = []
+        lableList = []
+        for oneStat in self.listOfStat:
+            listToDraw.append(oneStat[namePar])
+            lableList.append("t" + str(oneStat['tillCount']) + 's' + str(oneStat['separateValue']))
+        plt.plot(lableList, listToDraw)
+        plt.title(namePar)
+        plt.show()
+                
+        
     def getOptimalParameters(self, optimalType):
         self.tryToOptimise()
         theMostOptimal = None
@@ -456,6 +468,7 @@ class GeneralFrame(Frame):
         modelTime = int(self.modelTime.get())
         optimPar = OptimalParameters(modelTime, tillCount, separateValue)
         self.formReportFrame(optimPar.getOptimalParameters('maxWaitingTime'), 1)
+        optimPar.drawPlotByName('maxWaitingTime')
         
     def calculateFunc(self):
         tillCount = int(self.tillCount.get())
