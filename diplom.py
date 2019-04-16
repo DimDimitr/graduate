@@ -10,13 +10,14 @@ import statistics
 from DatBaseConnector import datBaseConnector 
 from DatBaseConnector import Operation
 import matplotlib.pyplot as plt
+import numpy as np
 
 from tkinter import tix as tk
 from tkinter import *
 from tkinter import ttk
 
 repeatCount = 20
-incomeMidTime = 7
+incomeMidTime = 4
 
 #Класс описывающий среднее свремя по категориям для отдельного типа обращения
 class BaseTime():
@@ -106,9 +107,9 @@ class InputQueueEngine():
             tempTime += randomTimeComming
     
     def __getRandomCommingTime(self, middleTime):
-        randomTimeComming = int(random.gauss(middleTime, 1))
+        randomTimeComming = int(np.random.poisson(middleTime, 1))
         while randomTimeComming <= 0:
-            randomTimeComming = int(random.gauss(middleTime, 1))
+            randomTimeComming = int(np.random.poisson(middleTime, 1))
         return randomTimeComming
 #   Возвращает случайный тип посетителя
     def __getRandomConcession(self):
@@ -357,12 +358,12 @@ class OptimalParameters():
         tillCount = 1
         while(tillCount <= self.tillCountMax):
             separateValue = 1
-            while(separateValue <= self.separateValueMax):
+            while(format(separateValue, '.3f') <= format(self.separateValueMax, '.3f')):
                 objTemp = MultipleTesting(self.modelTime, tillCount, separateValue)
                 self.listOfStat.append(objTemp.getStat())
                 separateValue += 1
             tillCount += 1              
-
+        
     def drawPlotByName(self, namePar):
         listToDraw = []
         lableList = []
@@ -371,6 +372,7 @@ class OptimalParameters():
             lableList.append("t" + str(oneStat['tillCount']) + 's' + str(oneStat['separateValue']))
         plt.plot(lableList, listToDraw)
         plt.title(namePar)
+        plt.rcParams["figure.figsize"] = [12, 9]
         plt.show()
                 
         
@@ -467,8 +469,8 @@ class GeneralFrame(Frame):
         separateValue = int(self.separateValue.get())
         modelTime = int(self.modelTime.get())
         optimPar = OptimalParameters(modelTime, tillCount, separateValue)
-        self.formReportFrame(optimPar.getOptimalParameters('maxWaitingTime'), 1)
-        optimPar.drawPlotByName('maxWaitingTime')
+        self.formReportFrame(optimPar.getOptimalParameters('countIgnored'), 1)
+        optimPar.drawPlotByName('countIgnored')
         
     def calculateFunc(self):
         tillCount = int(self.tillCount.get())
