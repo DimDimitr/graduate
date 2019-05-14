@@ -7,6 +7,7 @@ Created on Mon Feb 18 16:36:26 2019
 import random
 import math
 import statistics
+import datetime
 from DatBaseConnector import datBaseConnector 
 from DatBaseConnector import Operation
 import matplotlib.pyplot as plt
@@ -483,9 +484,9 @@ class GeneralFrame(Frame):
         resFrame = Toplevel()
         resFrame.title("Результат")
         if(optimMode):
-            labelTableName = Label(resFrame, text="В резульате оптимазации найдены наименьшие значения:")
+            labelTableName = Label(resFrame, text="В резульате оптимазации найдены усредненные наименьшие значения:")
         else:
-            labelTableName = Label(resFrame, text="Для указанных параметров получены результаты:")
+            labelTableName = Label(resFrame, text="Для указанных параметров получены усредненные результаты:")
         widthFrame = 170
         if(labelTableName.winfo_reqwidth() + 10 > widthFrame):
             widthFrame = labelTableName.winfo_reqwidth() + 10
@@ -493,11 +494,10 @@ class GeneralFrame(Frame):
         labelTableName.grid(row = 0, column = 0, columnspan = 3, padx=5, pady=5)
         textToLable = "Количество точек обслужвания = " + str(result['tillCount'])
         textToLable += "\nСегментация очереди = " + str(result['separateValue'])
-        textToLable += "\nМаксимальное время ожидания = " + str(result['maxWaitingTime'])
-        textToLable += "\nМинимальное время ожмдания = " + str(result['minWaitingTime'])
+        textToLable += "\nМаксимальное время ожидания = " + str(datetime.timedelta(minutes=round(result['maxWaitingTime'], 1))) + " мин"
         textToLable += "\nМаксимальная длина очереди = " + str(result['maxQueueLen'])
         textToLable += "\nНе успели обслужиться - " + str(result['countIgnored'])
-        textToLable += "\nСреднее время ожидания = " + str(result['serviceMidTime'])
+        textToLable += "\nСреднее время ожидания = " + str(datetime.timedelta(minutes=round(result['serviceMidTime'], 1))) + " мин"
         labelStat = Label(resFrame, text = textToLable).grid(row = 1, column = 0, rowspan = 6, columnspan = 3, padx=5, pady=5)
 
         def okay():
