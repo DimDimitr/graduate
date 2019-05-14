@@ -436,7 +436,7 @@ class GeneralFrame(Frame):
         self.initUI()
         
     def initUI(self):
-        self.parent.title("SovaVolunteer")          
+        self.parent.title("EQueue")          
         self.pack(fill=BOTH, expand=1)
         frame = Frame(self)
         frame.pack()
