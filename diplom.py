@@ -470,8 +470,8 @@ class GeneralFrame(Frame):
         separateValue = int(self.separateValue.get())
         modelTime = int(self.modelTime.get())
         optimPar = OptimalParameters(modelTime, tillCount, separateValue)
-        self.formReportFrame(optimPar.getOptimalParameters('countIgnored'), 1)
-        optimPar.drawPlotByName('countIgnored')
+        self.formReportFrame(optimPar.getOptimalParameters('serviceMidTime'), 1)
+        optimPar.drawPlotByName('serviceMidTime')
         
     def calculateFunc(self):
         tillCount = int(self.tillCount.get())
