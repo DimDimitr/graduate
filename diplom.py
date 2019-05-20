@@ -20,6 +20,15 @@ from tkinter import ttk
 repeatCount = 20
 incomeMidTime = 4
 
+#Варианты
+#'maxWaitingTime'
+#'minWaitingTime' 
+#'maxQueueLen'
+#'countIgnored'
+#'serviceMidTime'
+
+optimisationParameter = 'countIgnored'
+
 #Класс описывающий среднее свремя по категориям для отдельного типа обращения
 class BaseTime():
     def __init__(self, timeObject):
@@ -470,8 +479,8 @@ class GeneralFrame(Frame):
         separateValue = int(self.separateValue.get())
         modelTime = int(self.modelTime.get())
         optimPar = OptimalParameters(modelTime, tillCount, separateValue)
-        self.formReportFrame(optimPar.getOptimalParameters('serviceMidTime'), 1)
-        optimPar.drawPlotByName('serviceMidTime')
+        self.formReportFrame(optimPar.getOptimalParameters(optimisationParameter), 1)
+        optimPar.drawPlotByName(optimisationParameter)
         
     def calculateFunc(self):
         tillCount = int(self.tillCount.get())
@@ -495,8 +504,8 @@ class GeneralFrame(Frame):
         textToLable = "Количество точек обслужвания = " + str(result['tillCount'])
         textToLable += "\nСегментация очереди = " + str(result['separateValue'])
         textToLable += "\nМаксимальное время ожидания = " + str(datetime.timedelta(minutes=round(result['maxWaitingTime'], 1))) + " мин"
-        textToLable += "\nМаксимальная длина очереди = " + str(result['maxQueueLen'])
-        textToLable += "\nНе успели обслужиться - " + str(result['countIgnored'])
+        textToLable += "\nМаксимальная длина очереди = " + str(round(result['maxQueueLen'], 0)) + " чел."
+        textToLable += "\nНе успели обслужиться - " + str(round(result['countIgnored'], 0)) + " чел."
         textToLable += "\nСреднее время ожидания = " + str(datetime.timedelta(minutes=round(result['serviceMidTime'], 1))) + " мин"
         labelStat = Label(resFrame, text = textToLable).grid(row = 1, column = 0, rowspan = 6, columnspan = 3, padx=5, pady=5)
 
